@@ -6,6 +6,8 @@ Python 3.7 and pytorch 1.9.1. More details are under requirements.txt, but some 
 2. Run `train.py` with `IF_TUNE_HYPER_PARAM` set to True
 3. Inspect the output result from it (require `WRITE_TEST_RESULT_TO_CSV` set to True)
 4. Test the selected model checkpoint using `train.py` with `IF_TUNE_HYPER_PARAM` and `WRITE_TEST_RESULT_TO_CSV` set to True
+
+Because previously I run them at my local machine so I do not write any sys.args. They can be run directly (`python introduce_bias.py`, `python train.py`).
 ### What does `IF_TUNE_HYPER_PARAM` do?
 Setting it to true makes the script use validation data as test set, so it outputs acc on val set. Setting it to false makes the script use test set. 
 ## Dataset
