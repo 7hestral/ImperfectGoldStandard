@@ -301,3 +301,8 @@ poetry.toml
 .ionide
 
 # End of https://www.toptal.com/developers/gitignore/api/python,pycharm,visualstudiocode
+
+# Ignore data
+all_images/
+bias_csv/
+output/
