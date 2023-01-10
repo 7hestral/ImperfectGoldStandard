@@ -507,8 +507,9 @@ if __name__ == '__main__':
     for bias_name, file_name in zip(bias_name_lst, file_name_lst):
         file_path = os.path.join(os.getcwd(), file_name)
         for alpha in alpha_list:
-            train_model(f'epoch{epoch_num}-kaggle-{bias_name}-KLDIV-alpha{alpha}-trial{trial_date}', no_bias,
-                        1, epoch_num, 0, path=file_path, kldiv=True, alpha=alpha)
+            if IF_TUNE_HYPER_PARAM:
+                train_model(f'epoch{epoch_num}-kaggle-{bias_name}-KLDIV-alpha{alpha}-trial{trial_date}', no_bias,
+                            1, epoch_num, 0, path=file_path, kldiv=True, alpha=alpha)
 
             # result = get_acc_from_pickle(f'epoch{epoch_num}-kaggle-{bias_name}-KLDIV-alpha{alpha}-trial{trial_date}.pickle')
             result = get_acc(f'./output/epoch{epoch_num}-kaggle-{bias_name}-KLDIV-alpha{alpha}-trial{trial_date}', file_path)
